@@ -47,3 +47,5 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 . /Users/jamie/Dropbox/bin/z/z.sh
 source ~/Dropbox/bin/git-completion.bash
+
+set -o vi
