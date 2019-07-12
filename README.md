@@ -1,4 +1,10 @@
 DOTFILES
 ===============
 
-Setup: https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
+Forked from: https://github.com/mathiasbynens/dotfiles
+
+Inspired from this post: https://dotfiles.github.io/
+
+# Installing
+
+Clone this repository and execute the `./bootstrap.sh` file.
