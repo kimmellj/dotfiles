@@ -7,4 +7,10 @@ Inspired from this post: https://dotfiles.github.io/
 
 # Installing
 
-Clone this repository and execute the `./bootstrap.sh` file.
+```bash
+git clone git@github.com:kimmellj/dotfiles.git
+cd ./dotfiles/
+git submodule init
+git submodule update
+./bootstrap.sh
+```
