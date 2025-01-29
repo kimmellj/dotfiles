@@ -1,0 +1,6 @@
+theme = tokyonight_night
+background-opacity = .6
+background-blur-radius = 7
+window-inherit-working-directory = true
+macos-icon-ghost-color = 000000
+macos-icon-screen-color = 4AF626

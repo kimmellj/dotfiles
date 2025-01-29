@@ -1,3 +1,7 @@
+#!/bin/zsh
+
+alias t="todo.sh"
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
