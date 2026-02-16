@@ -38,6 +38,8 @@ ssh:
 portForwards:
   - guestSocket: "/var/run/docker.sock"
     hostSocket: "{{.Dir}}/sock/docker.sock"
+  - guestPort: 5901
+      hostPort: 5901
 
 # AUTOMATION: Install Docker CE on first boot
 provision:
@@ -49,7 +51,14 @@ provision:
       # --- 1. Install Docker and Python Dependencies ---
       apt-get update && apt-get install -y ca-certificates curl gnupg jq build-essential \
       libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev \
-      libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
+      libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev \
+      pkg-config \
+        libxml2-dev \
+        libsqlite3-dev \
+        libcurl4-openssl-dev \
+        libpng-dev \
+        libonig-dev \
+        libzip-dev \ libpq-dev
 
       install -m 0755 -d /etc/apt/keyrings
 
