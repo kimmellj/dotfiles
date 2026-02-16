@@ -18,10 +18,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
 fi
 
 # Copy Configs
-rsync --exclude ".git/" \
-    --exclude ".DS_Store" \
-    --exclude "bootstrap.sh" \
-    --exclude "platforms/" \
-    --exclude "README.md" \
-    --exclude "iterm/" \
-    -av . ~
+rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude "iterm/" -av . ~
+
+./.brew
+
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
