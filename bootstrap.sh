@@ -15,6 +15,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-
 if [[ "$(uname)" == "Darwin" ]]; then
     ./platform/macos/brewfile
     ./platforms/macos/configure
+    ./platforms/macos/setup_nvim
 fi
 
 # Copy Configs
