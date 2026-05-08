@@ -79,7 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,7 +116,12 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ASDF
+# Manually load asdf
 . "$HOME/.asdf/asdf.sh"
+
+# Manually load completions (the stable way)
+fpath=(${ASDF_DIR:-$HOME/.asdf}/completions $fpath)
+autoload -Uz compinit && compinit
 
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
