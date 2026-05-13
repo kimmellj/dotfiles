@@ -15,7 +15,7 @@ fi
 
 # Install core dependencies
 echo "Installing core dependencies..."
-brew install neovim lua luarocks ripgrep fd git curl wget
+brew install neovim lua luarocks ripgrep fd git curl wget tree-sitter tree-sitter-cli
 
 # Optional: Install Node.js if not present (needed for some LSPs)
 if ! command -v node &> /dev/null; then

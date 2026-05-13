@@ -50,6 +50,27 @@ if [ -f /usr/bin/fdfind ] && [ ! -f /usr/local/bin/fd ]; then
     echo "Created fd symlink"
 fi
 
+# Install tree-sitter CLI (required by nvim-treesitter main branch to compile parsers).
+# Debian 12 has no apt package, and the npm tree-sitter-cli ships a binary built
+# against a newer glibc than Debian provides, so we use the official prebuilt binary.
+if ! command -v tree-sitter &> /dev/null; then
+    echo "Installing tree-sitter CLI..."
+    case "$(uname -m)" in
+        aarch64|arm64) TS_ARCH=arm64 ;;
+        x86_64)        TS_ARCH=x64   ;;
+        *) echo "Unsupported architecture for tree-sitter CLI: $(uname -m)"; exit 1 ;;
+    esac
+    cd /tmp
+    curl -fLO "https://github.com/tree-sitter/tree-sitter/releases/latest/download/tree-sitter-linux-${TS_ARCH}.gz"
+    gunzip -f "tree-sitter-linux-${TS_ARCH}.gz"
+    chmod +x "tree-sitter-linux-${TS_ARCH}"
+    sudo install "tree-sitter-linux-${TS_ARCH}" /usr/local/bin/tree-sitter
+    rm "tree-sitter-linux-${TS_ARCH}"
+    echo "tree-sitter installed: $(tree-sitter --version)"
+else
+    echo "tree-sitter already installed: $(tree-sitter --version)"
+fi
+
 # Completely remove existing Neovim config
 echo "Removing existing Neovim config..."
 rm -rf ~/.config/nvim
