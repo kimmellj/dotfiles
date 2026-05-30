@@ -47,6 +47,7 @@ brew install --cask restfox
 brew install neovim
 brew install luarocks
 brew install jdtls
+brew install glow
 
 # Remove outdated versions from the cellar
 brew cleanup
