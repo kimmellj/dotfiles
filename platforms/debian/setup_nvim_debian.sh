@@ -37,7 +37,7 @@ if ! command -v nvim &> /dev/null; then
     cd /tmp
     curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-arm64.appimage
     chmod u+x nvim-linux-arm64.appimage
-    ./    sudo mv nvim-linux-arm64.appimage /usr/local/bin/nvim
+    sudo mv nvim-linux-arm64.appimage /usr/local/bin/nvim
 
     echo "Neovim installed to /usr/local/bin/nvim"
 else
